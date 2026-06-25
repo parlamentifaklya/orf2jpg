@@ -4,10 +4,10 @@ BINNAME = orf2jpg
 BINEXT = .exe
 
 all: $(CLIBDIR)/liborfdecode.a
-	go build -ldflags "-H windowsgui -extldflags=-static" -o $(BINNAME)$(BINEXT) ./cmd/orf2jpg
+	go build -ldflags "-H windowsgui" -o orf2jpg.exe ./cmd/orf2jpg
 
 $(CLIBDIR)/liborfdecode.a: $(CLIBDIR)/orf_decode.c $(CLIBDIR)/orf_decode.h
-	$(CC) -DLIBRAW_NODLL -c $(CLIBDIR)/orf_decode.c -o $(CLIBDIR)/orf_decode.o
+	$(CC) -c $(CLIBDIR)/orf_decode.c -o $(CLIBDIR)/orf_decode.o
 	ar rcs $(CLIBDIR)/liborfdecode.a $(CLIBDIR)/orf_decode.o
 
 test-c:

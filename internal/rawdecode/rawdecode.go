@@ -2,7 +2,7 @@ package rawdecode
 
 /*
 #cgo CFLAGS: -I${SRCDIR}/clib
-#cgo LDFLAGS: -L${SRCDIR}/clib -lorfdecode -Wl,-Bstatic -lraw -lgomp -lz -ljpeg -llcms2 -lstdc++ -Wl,-Bdynamic -lws2_32
+#cgo LDFLAGS: -L${SRCDIR}/clib -lorfdecode -lraw
 #include "orf_decode.h"
 #include <stdlib.h>
 */
